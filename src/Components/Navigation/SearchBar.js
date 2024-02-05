@@ -20,7 +20,7 @@ export default function SearchBar() {
         </div>
         <div style={{flex:"1",justifyContent:"right"}}>
           <div id={styles2.filterWrappper}>
-            <img src={filter}></img>
+            <img src={filter} alt="filter"></img>
           </div>
         </div>
       </div>

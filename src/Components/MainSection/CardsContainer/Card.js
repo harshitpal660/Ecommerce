@@ -1,10 +1,14 @@
 import React from "react";
+import { useContext } from "react";
 import style from "../../../Styles/MainSection.module.css";
+import MyContext from "../../../Context/MyContext";
 export default function Card({item}) {
   console.log(item);
+  const contextValue = useContext(MyContext);
+  console.log(contextValue);
   return <div className={style.Card}>
     <div className={style.image}>
-      <img src={item.imageURL}></img>
+      <img src={item.imageURL} alt={style.title}></img>
     </div>
     <div className={style.title}>
       {item.name}
