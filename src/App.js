@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage"
+import Checkout from "./Pages/Checkout"
+import CartPage from "./Pages/CartPage"
 
 function App() {
+  const [cartVisited, setCartVisited] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route
+            path='/Cart'
+            element={<CartPage setCartVisited={() => setCartVisited(true)} />}
+          />
+          {cartVisited ? (
+            <Route path="/Checkout" element={<Checkout />} />
+          ) : (
+            // Redirect to HomePage if cart is not visited
+            <Route path='/*' element={<HomePage/>} />
+          )}
+        </Routes>
+      </Router>
     </div>
   );
 }

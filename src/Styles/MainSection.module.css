@@ -1,0 +1,126 @@
+#MainSection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rem;
+}
+
+/* Styles for screens with a width above 650px */
+@media (min-width: 651px) {
+  .filterCategory {
+    margin-top: 1rem;
+  }
+
+  .FilterContainer {
+    display: block; /* or any other display property you want */
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    height: fit-content;
+    width: 15rem;
+    background-color: rgb(243, 206, 162);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 0.2rem;
+    box-sizing: border-box;
+  }
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .filterValue {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .checkBoxes {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #filterWrappper {
+    display: none;
+    height: 2rem;
+    width: 2rem;
+    /* min-height: 32px;
+    min-width: 32px; */
+    overflow: hidden;
+    flex: 1;
+    justify-content: end;
+  }
+}
+
+/* Styles for screens with a width up to 650px */
+@media (max-width: 650px) {
+  .FilterContainer {
+    display: none; /* or any other display property you want */
+  }
+
+  #filterWrappper {
+    display: block;
+    height: 32px;
+    width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    /* flex: 1; */
+    justify-content: end;
+    overflow: hidden;
+  }
+
+}
+/* .filterCategoryWrapper{
+    position: fixed;
+} */
+.CardsContainer {
+  flex: 1;
+  background-color: rgb(243, 206, 162);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  margin: 0.2rem;
+  padding: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Oswald", sans-serif;;
+}
+
+.Card {
+  height: 50vw;
+  width: 40vw;
+  max-width: 270px;
+  max-height: 360px;
+  min-width: 150px;
+  min-height: 200px;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: azure;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.image{
+  height: 20rem;
+  overflow: hidden;
+}
+img{
+  height: 100%;
+  width: 100%;
+}
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.addToCart:hover{
+  background-color: rgb(243, 206, 162);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 1px;
+  border-radius: 5px;
+}
