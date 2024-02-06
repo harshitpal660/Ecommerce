@@ -1,17 +1,17 @@
 import "./App.css";
-import MyContext from "./Context/MyContext";
+import { MyContextProvider } from "./Context/MyContext";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Checkout from "./Pages/Checkout";
 import CartPage from "./Pages/CartPage";
-
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from "react-notifications";
 function App() {
-  const contextValue = { cartItems: [] };
+  // const contextValue = { cartItems: [] };
   const [cartVisited, setCartVisited] = useState(false);
-
   return (
-    <MyContext.Provider value={contextValue}>
+    <MyContextProvider>
       <div className="App">
         <Router>
           <Routes>
@@ -29,7 +29,9 @@ function App() {
           </Routes>
         </Router>
       </div>
-    </MyContext.Provider>
+      <NotificationContainer/>
+
+    </MyContextProvider>
   );
 }
 
